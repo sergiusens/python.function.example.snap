@@ -1,0 +1,20 @@
+name: python-function-example # you probably want to 'snapcraft register <name>'
+version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Calling a function for another python file # 79 char long summary
+description: see above
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+
+apps:
+    hello:
+        command: bin/hello
+
+parts:
+    files:
+        plugin: dump
+        source: ../src
+        organize:
+            ../src/hello.py : bin/hello
+            ../src/message.py : bin/message
