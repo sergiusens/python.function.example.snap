@@ -10,6 +10,8 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 apps:
     hello:
         command: bin/hello
+        environment:
+            PYTHONPATH: $SNAP/bin
 
 parts:
     files:
