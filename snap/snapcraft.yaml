@@ -9,14 +9,11 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 apps:
     hello:
-        command: bin/hello
+        command: ./hello.py
         environment:
-            PYTHONPATH: $SNAP/bin
+            PYTHONPATH: $SNAP
 
 parts:
     files:
         plugin: dump
-        source: ../src
-        organize:
-            ../src/hello.py : bin/hello
-            ../src/message.py : bin/message
+        source: src
